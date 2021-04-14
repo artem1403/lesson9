@@ -1,0 +1,6 @@
+# roles/webserver/handlers/main.yml
+---
+- name: restart tomcat
+  service: 
+    name: tomcat9
+    state: restarted

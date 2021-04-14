@@ -1,0 +1,8 @@
+# roles/buildserver/tasks/main.yml
+---
+- name: install packages
+  apt: name={{item}} state=present
+  become: yes
+  with_items:
+    - default-jdk
+    - maven
