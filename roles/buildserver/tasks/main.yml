@@ -10,8 +10,8 @@
 
 - name: git clone project
   git:
-    repo: {{ git_repo_url }}
-    dest: {{ git_repo_dest }}
+    repo: '{{ git_repo_url }}'
+    dest: '{{ git_repo_dest }}'
     clone: yes
 
 - name: Running mvn clean
@@ -25,6 +25,6 @@
 
 - name: get .war-file from bulid-machine to master-machine
   fetch:
-    src: {{ war_file_path }}
-    dest: {{ war_dest_in_master_vm }}
+    src: '{{ war_file_path }}'
+    dest: '{{ war_dest_in_master_vm }}'
     flat: yes
