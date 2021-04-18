@@ -14,8 +14,10 @@
     - tomcat9
   when: ansible_facts['os_family']|lower == 'redhat'
 
-
 - name: deploy .war-file to web-production servers
-  # TODO: дописать синхронайз
+  copy:
+    src: '{{ war_src_on_master_vm }}'
+    dest: '{{ webapps_home }}'
+    mode: u+rw,g+rwx,o+rwx
   notify:
     - restart tomcat
